@@ -628,6 +628,12 @@
   dependencies:
     prop-types "^15.5.10"
 
+"@atlaskit/theme@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/theme/-/theme-6.0.0.tgz#a638bf42d1042caf44e5c810121e3d83e7cd587c"
+  dependencies:
+    prop-types "^15.5.10"
+
 "@atlaskit/tooltip@^12.0.4", "@atlaskit/tooltip@^12.0.5":
   version "12.0.8"
   resolved "https://registry.yarnpkg.com/@atlaskit/tooltip/-/tooltip-12.0.8.tgz#b91360c9dfb7a8c48069c4cfc9a7b63a50b3c25e"
