@@ -10,7 +10,7 @@ export default class NotesStore extends Container<NotesState> {
 
   getNote = (noteId: NoteID): Note => this.state.notes[noteId];
 
-  setNote = (noteId: NoteID, note: Note): Promise<void> =>
+  updateNote = (noteId: NoteID, note: Note): Promise<void> =>
     this.setState(state => ({
       notes: {
         ...state.notes,

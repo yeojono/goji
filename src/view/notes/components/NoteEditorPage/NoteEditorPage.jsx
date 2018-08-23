@@ -1,10 +1,10 @@
-import React from 'react';
-import { Subscribe } from 'unstated';
+// @flow
+import type { NoteID } from '../../../../model/notes';
 
-import NotesStore from '../../../app-state/notes/NotesStore';
-import { type NoteID } from '../../../app-state/notes/types';
-import NoteEditor from '../NoteEditor';
+import React from 'react';
+
 import * as Styled from './NoteEditor.styled';
+import NoteEditorContainer from '../NoteEditor';
 
 type Props = {
   match: {
@@ -21,12 +21,7 @@ export class NoteEditorPage extends React.Component<Props> {
     const { match: { params: { noteId } } } = this.props;
     return (
       <Styled.Page>
-        <Subscribe to={[NotesStore]}>
-          {(notes) => {
-            const note = notes.getNote(noteId) || {};  // TODO FIX
-            return <NoteEditor note={note} />;
-          }}
-        </Subscribe>
+        <NoteEditorContainer noteId={noteId} />
       </Styled.Page>
     );
   }

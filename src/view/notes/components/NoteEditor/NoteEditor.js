@@ -46,6 +46,7 @@ export class NoteEditor extends React.Component<Props> {
   }
 
   render() {
+    const { note } = this.props;
     return (
       <EditorContext>
         <WithEditorActions render={
