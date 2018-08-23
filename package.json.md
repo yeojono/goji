@@ -1,18 +1,17 @@
 # Dev Dependencies
 
 Babel basics
-- babel-core
-- babel-loader
-- babel-preset-env
-- babel-preset-react
-- babel-preset-stage-2
+- @babel/core
+- @babel/preset-env
+- @babel/preset-react
+- @babel/plugin-proposal-class-properties
 
-- css-loader
-- style-loader
-
-Webpack
+Webpack and its loaders
 - webpack
 - webpack-cli
+- babel-loader
+- css-loader
+- style-loader
 
 Finer build control - HTML templates
 - html-webpack-plugin
@@ -41,6 +40,12 @@ React
 - react
 - react-dom
 
+To satisfy editor peer dep
+- react-intl
+
 SPA Routing
 - react-router-dom
+
+
+
 

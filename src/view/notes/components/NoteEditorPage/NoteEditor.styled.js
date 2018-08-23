@@ -1,10 +1,11 @@
 import styled from 'react-emotion';
 
-export const Page = styled('div')`
-  width: 900px;
-  height: 100vh;
+export const Page = styled.div`
+  display: block;
   
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  margin: 0 auto;
+  padding: 0 16px;
+  
+  max-width: 744px;
+  width: 100%;
 `;

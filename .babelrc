@@ -1,8 +1,7 @@
 {
   "presets": [
-    "env",
-    "react",
-    "stage-2"
+    "@babel/preset-react",
+    "@babel/preset-env"
   ],
   "plugins": [
     [
@@ -11,6 +10,7 @@
         "autoLabel": true,
         "labelFormat": "-[local]"
       }
-    ]
+    ],
+    "@babel/plugin-proposal-class-properties"
   ]
 }
