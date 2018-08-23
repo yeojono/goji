@@ -29,6 +29,7 @@ export class EditorTitle extends React.Component {
         innerRef={this.handleRef}
         placeholder={this.props.placeholder}
         onKeyPress={this.handleKeyPress}
+        defaultValue={this.props.defaultValue}
       />
     );
   }
