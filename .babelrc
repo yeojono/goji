@@ -3,5 +3,14 @@
     "env",
     "react",
     "stage-2"
+  ],
+  "plugins": [
+    [
+      "emotion",
+      {
+        "autoLabel": true,
+        "labelFormat": "-[local]"
+      }
+    ]
   ]
 }

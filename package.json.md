@@ -35,6 +35,7 @@ Component libraries
 Component styling
 - emotion
 - react-emotion
+- (dev) babel-plugin-emotion
 
 React
 - react
