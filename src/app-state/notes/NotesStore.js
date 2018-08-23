@@ -1,6 +1,7 @@
 // @flow
 import { Container } from "unstated";
-import type { Note, NoteID, NotesState } from "./types";
+import type { NotesState } from "./types";
+import { type NoteID, type Note } from "../../model/notes";
 
 export default class NotesStore extends Container<NotesState> {
   state: NotesState = {
