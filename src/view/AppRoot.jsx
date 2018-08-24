@@ -11,7 +11,6 @@ import { colors } from '@atlaskit/theme';
 import HomePage from './home/components/HomePage';
 import NotesPage from './notes/components/NotesPage';
 import NoteEditorPage from './notes/components/NoteEditorPage';
-import { NotesStore } from '../app-state';
 
 /**
  * Loaders are manually specified here instead of in webpack config as this
@@ -45,14 +44,10 @@ const TitleMark = styled.h1`
   margin-right: 16px;
 `;
 
-const stores = [
-  new NotesStore(),
-]
-
 export default class AppRoot extends React.Component {
   render() {
     return (
-      <Provider inject={stores}>
+      <Provider inject={this.props.stores}>
         <Router>
           <React.Fragment>
             <BootlegNav>

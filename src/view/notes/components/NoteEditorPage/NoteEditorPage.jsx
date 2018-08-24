@@ -15,9 +15,7 @@ type Props = {
 }
 
 export class NoteEditorPage extends React.Component<Props> {
-
   render() {
-    console.log(this.props);
     const { match: { params: { noteId } } } = this.props;
     return (
       <Styled.Page>

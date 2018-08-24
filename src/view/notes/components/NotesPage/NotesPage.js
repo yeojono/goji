@@ -17,7 +17,7 @@ export class NotesPage extends React.Component<Props> {
     return (
       <ul>
         {Object.keys(this.props.notes).map(noteId => (
-          <li>
+          <li key={noteId}>
             <Link to={`notes/${noteId}`}>{this.props.notes[noteId].title}</Link>
           </li>
         ))}

@@ -41,7 +41,6 @@ export class NoteEditor extends React.Component<Props> {
     const noteContent = await actions.getValue();
     const note = { title, noteContent };
 
-    console.log(JSON.stringify(note))
     this.props.saveNote(note);
   }
 
