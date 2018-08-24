@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'react-emotion';
 import { Editor } from '@atlaskit/editor-core';
 
 const HomeOuter = styled.div`

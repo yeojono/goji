@@ -9,6 +9,7 @@ import {
 import { colors } from '@atlaskit/theme';
 
 import HomePage from './home/components/HomePage';
+import NotesPage from './notes/components/NotesPage';
 import NoteEditorPage from './notes/components/NoteEditorPage';
 import { NotesStore } from '../app-state';
 
@@ -57,10 +58,10 @@ export default class AppRoot extends React.Component {
             <BootlegNav>
               <TitleMark>Goji</TitleMark>
               <Link to="/">Home</Link>
-              <Link to="/notes/jono">Notes Jono</Link>
-              <Link to="/notes/carmel">Notes Carmel</Link>
+              <Link to="/notes">Notes</Link>
             </BootlegNav>
             <Route exact path="/" component={HomePage}/>
+            <Route exact path="/notes" component={NotesPage}/>
             <Route path="/notes/:noteId" component={NoteEditorPage}/>
           </React.Fragment>
         </Router>
