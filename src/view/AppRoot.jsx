@@ -49,7 +49,7 @@ export default class AppRoot extends React.Component {
     return (
       <Provider inject={this.props.stores}>
         <Router>
-          <React.Fragment>
+          <>
             <BootlegNav>
               <TitleMark>Goji</TitleMark>
               <Link to="/">Home</Link>
@@ -58,7 +58,7 @@ export default class AppRoot extends React.Component {
             <Route exact path="/" component={HomePage}/>
             <Route exact path="/notes" component={NotesPage}/>
             <Route path="/notes/:noteId" component={NoteEditorPage}/>
-          </React.Fragment>
+          </>
         </Router>
       </Provider>
     );
