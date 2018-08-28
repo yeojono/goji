@@ -15,6 +15,10 @@ export default class NotesPersistor extends LocalStoragePersistor {
     this.read.bind(this);
   }
 
+  /**
+   * Only write to local storage on app close, rather than constantly on each
+   * call to write()
+   */
   _saveBeforeUnload = async () => {
     await this.write(this.state);
     window.removeEventListener('beforeunload', this._saveBeforeUnload);

@@ -24,7 +24,7 @@ export class NoteEditor extends React.Component<Props> {
 
   handleEditorTitleRef = ref => {
     this.editorTitleRef = ref;
-  }
+  } 
 
   /**
    * Inject ability to focus the Editor into the EditorTitle component
@@ -56,13 +56,21 @@ export class NoteEditor extends React.Component<Props> {
               </Button>
               <Editor
                 appearance="full-page"
+
+                allowCodeBlocks
+                allowDate
+                allowLists
+                allowTables
+                allowTasksAndDecisions
+                allowTextColor
+
                 contentComponents={
                   <EditorTitle
-                    innerRef={this.handleEditorTitleRef}
-                    shouldFocus
-                    placeholder="What's on your mind?"
-                    focusNext={this.handleEditorTitleFocusNext(actions)}
                     defaultValue={note.title}
+                    focusNext={this.handleEditorTitleFocusNext(actions)}
+                    innerRef={this.handleEditorTitleRef}
+                    placeholder="What's on your mind?"
+                    shouldFocus
                   />
                 }
                 defaultValue={note.noteContent}
