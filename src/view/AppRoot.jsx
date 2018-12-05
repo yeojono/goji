@@ -6,7 +6,10 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { NavigationProvider, LayoutManager } from '@atlaskit/navigation-next';
+import GlobalNavigation from '@atlaskit/global-navigation';
 import { colors } from '@atlaskit/theme';
+import EditFilledIcon from '@atlaskit/icon/glyph/edit-filled';
 
 import HomePage from './home/components/HomePage';
 import NotesPage from './notes/components/NotesPage';
@@ -18,6 +21,12 @@ import NoteEditorPage from './notes/components/NoteEditorPage';
  */
 import 'style-loader!css-loader!@atlaskit/css-reset/dist/bundle.css';
 
+const MyGlobalNavigation = () => (
+  <GlobalNavigation
+    productIcon={() => <EditFilledIcon size="medium" />}
+    onProductClick={() => {}}
+  />
+);
 
 const BootlegNav = styled.nav`
   width: 100vw;
@@ -49,16 +58,22 @@ export default class AppRoot extends React.Component {
     return (
       <Provider inject={this.props.stores}>
         <Router>
-          <>
-            <BootlegNav>
-              <TitleMark>Goji</TitleMark>
-              <Link to="/">Home</Link>
-              <Link to="/notes">Notes</Link>
-            </BootlegNav>
-            <Route exact path="/" component={HomePage}/>
-            <Route exact path="/notes" component={NotesPage}/>
-            <Route path="/notes/:noteId" component={NoteEditorPage}/>
-          </>
+          <NavigationProvider>
+            <LayoutManager
+              globalNavigation={MyGlobalNavigation}
+              productNavigation={() => null}
+              containerNavigation={() => null}
+            >
+              <BootlegNav>
+                <TitleMark>Goji</TitleMark>
+                <Link to="/">Home</Link>
+                <Link to="/notes">Notes</Link>
+              </BootlegNav>
+              <Route exact path="/" component={HomePage}/>
+              <Route exact path="/notes" component={NotesPage}/>
+              <Route path="/notes/:noteId" component={NoteEditorPage}/>
+            </LayoutManager>
+          </NavigationProvider>
         </Router>
       </Provider>
     );

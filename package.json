@@ -32,7 +32,10 @@
   "dependencies": {
     "@atlaskit/css-reset": "^3.0.1",
     "@atlaskit/editor-core": "^77.2.2",
+    "@atlaskit/global-navigation": "^4.3.0",
+    "@atlaskit/icon": "^13.4.0",
     "@atlaskit/media-core": "^23.0.1",
+    "@atlaskit/navigation-next": "^3.6.6",
     "@atlaskit/theme": "^6.0.0",
     "emotion": "^9.2.6",
     "react": "^16.4.1",
