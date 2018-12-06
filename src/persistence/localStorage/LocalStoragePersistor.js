@@ -1,4 +1,3 @@
-// @flow
 import type { Persistor, StoreKey } from "../types";
 import localStorage from './facade';
 

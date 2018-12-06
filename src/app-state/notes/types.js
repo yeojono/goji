@@ -1,4 +1,3 @@
-// @flow
 import { type NoteID, type Note } from "../../model/notes";
 
 export type NoteMap = {

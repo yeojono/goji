@@ -1,5 +1,3 @@
-// @flow
-
 export type StoreKey = string;
 
 export interface Persistor {

@@ -1,4 +1,3 @@
-// @flow
 import { type NoteID, Note } from '../../../../model/notes';
 
 import React from 'react';

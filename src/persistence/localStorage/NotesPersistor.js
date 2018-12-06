@@ -1,4 +1,3 @@
-// @flow
 import type { Note, NoteID } from "../../model/notes";
 import type { StoreKey } from "../types";
 
