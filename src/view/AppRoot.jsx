@@ -57,24 +57,26 @@ export default class AppRoot extends React.Component {
   render() {
     return (
       <Provider inject={this.props.stores}>
-        <Router>
-          <NavigationProvider>
-            <LayoutManager
-              globalNavigation={MyGlobalNavigation}
-              productNavigation={() => null}
-              containerNavigation={() => null}
-            >
-              <BootlegNav>
-                <TitleMark>Goji</TitleMark>
-                <Link to="/">Home</Link>
-                <Link to="/notes">Notes</Link>
-              </BootlegNav>
-              <Route exact path="/" component={HomePage}/>
-              <Route exact path="/notes" component={NotesPage}/>
-              <Route path="/notes/:noteId" component={NoteEditorPage}/>
-            </LayoutManager>
-          </NavigationProvider>
-        </Router>
+        <NavigationProvider>
+          <LayoutManager
+            globalNavigation={MyGlobalNavigation}
+            productNavigation={() => null}
+            containerNavigation={() => null}
+          >
+            <Router>
+              <>
+                <BootlegNav>
+                  <TitleMark>Goji</TitleMark>
+                  <Link to="/">Home</Link>
+                  <Link to="/notes">Notes</Link>
+                </BootlegNav>
+                <Route exact path="/" component={HomePage}/>
+                <Route exact path="/notes" component={NotesPage}/>
+                <Route path="/notes/:noteId" component={NoteEditorPage}/>
+              </> 
+            </Router>
+          </LayoutManager>
+        </NavigationProvider>
       </Provider>
     );
   }

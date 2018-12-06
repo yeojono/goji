@@ -3,7 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
+  devtool: 'source-map',
   entry: ['@babel/polyfill', './src/index.js'],
+  output: {
+    path: __dirname + '/dist',
+    publicPath: './',
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {
@@ -17,11 +23,6 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
-  output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
@@ -34,10 +35,8 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: './dist',
-    historyApiFallback: {
-      rewrites: { from: /.*/, to: 'index.html' }
-    },
+    publicPath: 'localhost:8080/',
+    historyApiFallback: true,
     hot: true,
     https: true,
   }

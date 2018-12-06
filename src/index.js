@@ -18,4 +18,6 @@ const mountApp = async function() {
   );
 }();
 
-module.hot.accept();
+module.hot.accept('./view/AppRoot', () => {
+  mountApp();
+});
