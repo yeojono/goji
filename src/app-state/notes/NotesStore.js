@@ -1,7 +1,7 @@
-import type { NoteID, Note } from "../../model/notes";
+import { NoteID, Note } from "../../model/notes";
 
 import { Container } from "unstated";
-import type { NotesState } from "./types";
+import { NotesState } from "./types";
 import NotesPersistor from "../../persistence/localStorage/NotesPersistor";
 
 export default class NotesStore extends Container<NotesState> {

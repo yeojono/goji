@@ -4,7 +4,7 @@ import { Editor, WithEditorActions, EditorContext } from '@atlaskit/editor-core'
 
 import EditorTitle from '../EditorTitle';
 
-import { type Note } from '../../../../model/notes';
+import { Note } from '../../../../model/notes';
 
 type Props = {
   note: Note;

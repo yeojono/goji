@@ -1,4 +1,4 @@
-import React, { type Node } from 'react';
+import React, { Node } from 'react';
 import * as Styled from './Biscuit.styled';
 
 interface Props {

@@ -1,4 +1,4 @@
-import type { NoteID } from '../../../../model/notes';
+import { NoteID } from '../../../../model/notes';
 
 import React from 'react';
 

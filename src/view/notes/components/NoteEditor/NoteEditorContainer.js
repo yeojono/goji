@@ -1,4 +1,4 @@
-import { type NoteID, Note } from '../../../../model/notes';
+import { NoteID, Note } from '../../../../model/notes';
 
 import React from 'react';
 import { Subscribe } from 'unstated';

@@ -1,5 +1,5 @@
-import type { Note, NoteID } from "../../model/notes";
-import type { StoreKey } from "../types";
+import { Note, NoteID } from "../../model/notes";
+import { StoreKey } from "../types";
 
 import LocalStoragePersistor from "./LocalStoragePersistor";
 

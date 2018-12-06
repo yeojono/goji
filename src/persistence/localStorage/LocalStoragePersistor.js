@@ -1,4 +1,4 @@
-import type { Persistor, StoreKey } from "../types";
+import { Persistor, StoreKey } from "../types";
 import localStorage from './facade';
 
 const GOJI_LS_KEY = 'GOJI_APP';
