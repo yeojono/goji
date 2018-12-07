@@ -13,15 +13,13 @@ type Props = {
   };
 }
 
-export class NoteEditorPage extends React.Component<Props> {
+export class NoteEditorRoute extends React.Component<Props> {
   render() {
     const { match: { params: { noteId } } } = this.props;
     return (
-      <Styled.Page>
+      <Styled.Route>
         <NoteEditorContainer noteId={noteId} />
-      </Styled.Page>
+      </Styled.Route>
     );
   }
 }
-
-export default NoteEditorPage;

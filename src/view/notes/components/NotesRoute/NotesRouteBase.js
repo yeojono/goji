@@ -7,13 +7,13 @@ interface Props {
 
 }
 
-const Page = styled.div`
+const Route = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
 `;
 
-export class NotesPage extends React.Component<Props> {
+export class NotesRouteBase extends React.Component<Props> {
   render() {
     return (
       <ul>
@@ -30,5 +30,3 @@ export class NotesPage extends React.Component<Props> {
     );
   }
 }
-
-export default NotesPage;

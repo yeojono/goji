@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: __dirname + '/dist',
@@ -14,14 +14,14 @@ module.exports = {
     rules: [
       {
         // Load JavaScript files
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
       },
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

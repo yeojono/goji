@@ -1,6 +1,6 @@
 import styled from 'react-emotion';
 
-export const Page = styled.div`
+export const Route = styled.div`
   display: block;
   
   margin: 0 auto;

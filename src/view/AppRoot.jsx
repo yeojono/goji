@@ -3,17 +3,26 @@ import styled from 'react-emotion';
 import { Provider } from 'unstated';
 import {
   BrowserRouter as Router,
+  Link,
   Route,
-  Link
+  Switch,
 } from 'react-router-dom'
-import { NavigationProvider, LayoutManager } from '@atlaskit/navigation-next';
+import {
+  Item,
+  LayoutManager,
+  MenuSection,
+  NavigationProvider,
+  withNavigationViewController,
+} from '@atlaskit/navigation-next';
 import GlobalNavigation from '@atlaskit/global-navigation';
 import { colors } from '@atlaskit/theme';
 import EditFilledIcon from '@atlaskit/icon/glyph/edit-filled';
 
-import HomePage from './home/components/HomePage';
-import NotesPage from './notes/components/NotesPage';
-import NoteEditorPage from './notes/components/NoteEditorPage';
+import { HomeRoute } from './home/components/HomeRoute';
+import { NotesRoute } from './notes/components/NotesRoute';
+import { NoteEditorRoute } from './notes/components/NoteEditorRoute';
+import { RouterLinkComponent } from './components/RouterLinkComponent';
+import { NavigationMenuLink } from './components/NavigationMenuLink';
 
 /**
  * Loaders are manually specified here instead of in webpack config as this
@@ -53,31 +62,47 @@ const TitleMark = styled.h1`
   margin-right: 16px;
 `;
 
-export default class AppRoot extends React.Component {
+const ContainerNavivation = () => (
+  <MenuSection>
+    {({ className }) => (
+      <div className={className}>
+        <NavigationMenuLink text="Dashboard" component={RouterLinkComponent} href="/notes">Deshbord</NavigationMenuLink>
+      </div>
+    )}
+  </MenuSection>
+)
+
+export class AppRoot extends React.Component {
   render() {
     return (
-      <Provider inject={this.props.stores}>
-        <NavigationProvider>
-          <LayoutManager
-            globalNavigation={MyGlobalNavigation}
-            productNavigation={() => null}
-            containerNavigation={() => null}
-          >
-            <Router>
-              <>
-                <BootlegNav>
-                  <TitleMark>Goji</TitleMark>
-                  <Link to="/">Home</Link>
-                  <Link to="/notes">Notes</Link>
-                </BootlegNav>
-                <Route exact path="/" component={HomePage}/>
-                <Route exact path="/notes" component={NotesPage}/>
-                <Route path="/notes/:noteId" component={NoteEditorPage}/>
-              </> 
-            </Router>
-          </LayoutManager>
-        </NavigationProvider>
-      </Provider>
+      <LayoutManager
+        globalNavigation={MyGlobalNavigation}
+        productNavigation={() => null}
+        containerNavigation={ContainerNavivation}
+      >
+        <>
+          <BootlegNav>
+            <TitleMark>Goji</TitleMark>
+            <Link to="/">Home</Link>
+            <Link to="/notes">Notes</Link>
+          </BootlegNav>
+          <Switch>
+            <Route exact path="/" component={HomeRoute}/>
+            <Route exact path="/notes" component={NotesRoute}/>
+            <Route path="/notes/:noteId" component={NoteEditorRoute}/>
+          </Switch>
+        </> 
+      </LayoutManager>
     );
   }
 }
+
+export default ({ stores }) => (
+  <Provider inject={stores}>
+    <Router>
+      <NavigationProvider>
+        <AppRoot />
+      </NavigationProvider>
+    </Router>
+  </Provider>
+);
