@@ -16,17 +16,17 @@ const Route = styled.div`
 export class NotesRouteBase extends React.Component<Props> {
   render() {
     return (
-      <ul>
+      <>
         {Object.keys(this.props.notes).map(noteId => (
-          <li key={noteId}>
+          <div key={noteId}>
             <Link to={`notes/${noteId}`}>
             <Biscuit
               title={this.props.notes[noteId].title}
             />
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </>
     );
   }
 }

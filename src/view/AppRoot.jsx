@@ -9,7 +9,7 @@ import {
 } from 'react-router-dom'
 import {
   Item,
-  LayoutManager,
+  LayoutManagerWithViewController,
   MenuSection,
   NavigationProvider,
   withNavigationViewController,
@@ -22,7 +22,9 @@ import { HomeRoute } from './home/components/HomeRoute';
 import { NotesRoute } from './notes/components/NotesRoute';
 import { NoteEditorRoute } from './notes/components/NoteEditorRoute';
 import { RouterLinkComponent } from './components/RouterLinkComponent';
-import { NavigationMenuLink } from './components/NavigationMenuLink';
+import { NavigationMenuLink as MenuLink } from './components/NavigationMenuLink';
+import { customComponents } from './navigation/custom-components';
+import { memesView } from './navigation/nav-views';
 
 /**
  * Loaders are manually specified here instead of in webpack config as this
@@ -37,65 +39,29 @@ const MyGlobalNavigation = () => (
   />
 );
 
-const BootlegNav = styled.nav`
-  width: 100vw;
-  height: 64px;
-
-  background-color: ${colors.R400};
-
-  display: flex;
-  align-items: center;
-  padding-left: 8px;
-
-  > * {
-    margin-right: 8px;
-    color: ${colors.R50};
+export class AppRootBase extends React.Component {
+  componentDidMount() {
+    this.props.navigationViewController.addView(memesView);
+    this.props.navigationViewController.setView(memesView.id);
   }
 
-  a {
-    text-decoration: none;
-  }
-`;
-
-const TitleMark = styled.h1`
-  font-family: "Charlie Display";
-  margin-right: 16px;
-`;
-
-const ContainerNavivation = () => (
-  <MenuSection>
-    {({ className }) => (
-      <div className={className}>
-        <NavigationMenuLink text="Dashboard" component={RouterLinkComponent} href="/notes">Deshbord</NavigationMenuLink>
-      </div>
-    )}
-  </MenuSection>
-)
-
-export class AppRoot extends React.Component {
   render() {
     return (
-      <LayoutManager
+      <LayoutManagerWithViewController
         globalNavigation={MyGlobalNavigation}
-        productNavigation={() => null}
-        containerNavigation={ContainerNavivation}
+        customComponents={customComponents}
       >
-        <>
-          <BootlegNav>
-            <TitleMark>Goji</TitleMark>
-            <Link to="/">Home</Link>
-            <Link to="/notes">Notes</Link>
-          </BootlegNav>
-          <Switch>
-            <Route exact path="/" component={HomeRoute}/>
-            <Route exact path="/notes" component={NotesRoute}/>
-            <Route path="/notes/:noteId" component={NoteEditorRoute}/>
-          </Switch>
-        </> 
-      </LayoutManager>
+        <Switch>
+          <Route exact path="/" component={HomeRoute}/>
+          <Route exact path="/notes" component={NotesRoute}/>
+          <Route path="/notes/:noteId" component={NoteEditorRoute}/>
+        </Switch>
+      </LayoutManagerWithViewController>
     );
   }
 }
+
+export const AppRoot = withNavigationViewController(AppRootBase);
 
 export default ({ stores }) => (
   <Provider inject={stores}>
