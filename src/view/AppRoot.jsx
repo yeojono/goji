@@ -21,6 +21,7 @@ import EditFilledIcon from '@atlaskit/icon/glyph/edit-filled';
 import { HomeRoute } from './home/components/HomeRoute';
 import { NotesRoute } from './notes/components/NotesRoute';
 import { NoteEditorRoute } from './notes/components/NoteEditorRoute';
+import { NewNoteRoute } from './notes/components/NewNoteRoute';
 import { RouterLinkComponent } from './components/RouterLinkComponent';
 import { NavigationMenuLink as MenuLink } from './components/NavigationMenuLink';
 import { customComponents } from './navigation/custom-components';
@@ -54,6 +55,7 @@ export class AppRootBase extends React.Component {
         <Switch>
           <Route exact path="/" component={HomeRoute}/>
           <Route exact path="/notes" component={NotesRoute}/>
+          <Route path="/notes/new" component={NewNoteRoute}/>
           <Route path="/notes/:noteId" component={NoteEditorRoute}/>
         </Switch>
       </LayoutManagerWithViewController>

@@ -4,6 +4,7 @@ import styled from 'react-emotion';
 import { CustomComponentTypes } from '../../custom-components';
 import HomeFilledIcon from '@atlaskit/icon/glyph/home-filled';
 import EditorNoteIcon from '@atlaskit/icon/glyph/editor/note';
+import AddIcon from '@atlaskit/icon/glyph/add';
 
 const NAV_VIEW_CONTAINER_MEMES = 'NAV_VIEW_CONTAINER_MEMES';
 
@@ -46,6 +47,13 @@ export const memesView = {
         before: EditorNoteIcon,
         text: 'Notes',
         href: '/notes'
+      },
+      {
+        type: CustomComponentTypes.MenuLink,
+        id: 'new-note',
+        before: AddIcon,
+        text: 'New note',
+        href: '/notes/new'
       },
     ],
   },
