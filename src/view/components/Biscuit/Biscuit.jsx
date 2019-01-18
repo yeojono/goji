@@ -19,7 +19,7 @@ export class Biscuit extends React.Component<Props> {
     return (
       <Styled.Crust>
         <Styled.Title>
-          {title}
+          {title || <Styled.PlaceholderText>Untitled</Styled.PlaceholderText>}
         </Styled.Title>
         {wrappedContent}
       </Styled.Crust>

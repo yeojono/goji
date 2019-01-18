@@ -9,15 +9,21 @@ export const Crust = styled.div`
   padding: 8px;
 
   ${elevation.e100}
-  background-color: ${colors.N0}
+  background-color: ${colors.N0};
   border-radius: 3px;
 `;
 
 export const Title = styled.span`
-  ${typography.h200}
+  ${typography.h200};
 `;
 
 export const TextContent = styled.span`
-  color: ${colors.N500}
+  color: ${colors.N500};
+`;
+
+export const PlaceholderText = styled.span`
+  color: ${colors.N80};
+  font-style: italic;
+  font-weight: 400;
 `;
 
