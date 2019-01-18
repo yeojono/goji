@@ -3,7 +3,7 @@ import { NoteID, Note } from '../../../../model/notes';
 import React from 'react';
 import { Subscribe } from 'unstated';
 import NotesStore from '../../../../app-state/notes/NotesStore';
-import { NoteEditor } from './NoteEditor';
+import NoteEditor from './NoteEditor';
 
 interface Props {
   noteId: NoteID;
