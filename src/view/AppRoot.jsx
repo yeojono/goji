@@ -6,6 +6,7 @@ import {
   Link,
   Route,
   Switch,
+  withRouter,
 } from 'react-router-dom'
 import {
   Item,
@@ -14,16 +15,13 @@ import {
   NavigationProvider,
   withNavigationViewController,
 } from '@atlaskit/navigation-next';
-import GlobalNavigation from '@atlaskit/global-navigation';
 import { colors } from '@atlaskit/theme';
-import EditFilledIcon from '@atlaskit/icon/glyph/edit-filled';
 
 import { HomeRoute } from './home/components/HomeRoute';
 import { NotesRoute } from './notes/components/NotesRoute';
 import { NoteEditorRoute } from './notes/components/NoteEditorRoute';
 import { NewNoteRoute } from './notes/components/NewNoteRoute';
-import { RouterLinkComponent } from './components/RouterLinkComponent';
-import { NavigationMenuLink as MenuLink } from './components/NavigationMenuLink';
+import { GlobalNavigation } from './navigation/GlobalNavigation';
 import { customComponents } from './navigation/custom-components';
 import { memesView } from './navigation/nav-views';
 
@@ -32,13 +30,6 @@ import { memesView } from './navigation/nav-views';
  * should be the only place they're used.
  */
 import 'style-loader!css-loader!@atlaskit/css-reset/dist/bundle.css';
-
-const MyGlobalNavigation = () => (
-  <GlobalNavigation
-    productIcon={() => <EditFilledIcon size="medium" />}
-    onProductClick={() => {}}
-  />
-);
 
 export class AppRootBase extends React.Component {
   componentDidMount() {
@@ -49,7 +40,7 @@ export class AppRootBase extends React.Component {
   render() {
     return (
       <LayoutManagerWithViewController
-        globalNavigation={MyGlobalNavigation}
+        globalNavigation={GlobalNavigation}
         customComponents={customComponents}
       >
         <Switch>
