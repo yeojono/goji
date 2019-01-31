@@ -36,13 +36,6 @@ export const memesView = {
     items: [
       {
         type: CustomComponentTypes.MenuLink,
-        id: 'home',
-        before: HomeFilledIcon,
-        text: 'Home',
-        href: '/'
-      },
-      {
-        type: CustomComponentTypes.MenuLink,
         id: 'notes',
         before: EditorNoteIcon,
         text: 'Notes',

@@ -7,7 +7,7 @@ import EditFilledIcon from '@atlaskit/icon/glyph/edit-filled';
 const GlobalNavigationBase = ({ history }) => (
   <AkGlobalNavigation
     productIcon={() => <EditFilledIcon size="medium" />}
-    onProductClick={() => { history.push('/'); }}
+    onProductClick={() => { history.push('/notes'); }}
   />
 );
 

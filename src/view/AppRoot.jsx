@@ -44,7 +44,6 @@ export class AppRootBase extends React.Component {
         customComponents={customComponents}
       >
         <Switch>
-          <Route exact path="/" component={HomeRoute}/>
           <Route exact path="/notes" component={NotesRoute}/>
           <Route path="/notes/new" component={NewNoteRoute}/>
           <Route path="/notes/:noteId" component={NoteEditorRoute}/>
