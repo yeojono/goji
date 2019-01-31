@@ -21,7 +21,7 @@ export class NoteEditorContainer extends React.Component<Props> {
   render() {
     return (
       <Subscribe to={[NotesStore]}>
-        {(notes) => (
+        {(notes: NotesStore) => (
           <NoteEditor
             key={this.props.noteId}
             note={selectNote(notes, this.props.noteId)}

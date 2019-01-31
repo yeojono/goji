@@ -9,7 +9,7 @@ const NAV_VIEW_CONTAINER_MEMES = 'NAV_VIEW_CONTAINER_MEMES';
 
 export const memesView = {
   id: NAV_VIEW_CONTAINER_MEMES,
-  type: 'container',
+  type: 'container' as 'container',
   getItems: () => [
   {
     type: 'HeaderSection',

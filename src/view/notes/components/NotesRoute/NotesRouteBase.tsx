@@ -1,17 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'react-emotion';
+
 import { Biscuit } from '../../../components/Biscuit/Biscuit';
+import { Note } from '../../../../model/notes';
 
-interface Props {
-
+export interface Props {
+  notes: { [id: string]: Note };
 }
-
-const Route = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-`;
 
 export class NotesRouteBase extends React.Component<Props> {
   render() {

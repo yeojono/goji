@@ -4,11 +4,7 @@ import uuid from 'uuid';
 
 import { ROUTES } from '../../../../constants/routes';
 
-interface Props {
-
-}
-
-export class NewNoteRoute extends React.Component<Props> {
+export class NewNoteRoute extends React.Component<{}> {
   render() {
     return (
       <Redirect to={`${ROUTES.NOTES}/${uuid()}`} />

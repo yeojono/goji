@@ -1,11 +1,19 @@
 import React from 'react';
-import * as Styled from './EditorTitle.styled';
+import * as Styled from './styled';
+
+export interface Props {
+  defaultValue: string;
+  placeholder: string;
+  shouldFocus: boolean;
+  focusNext: () => void;
+  innerRef: (ref: any) => void;
+}
 
 /**
  * Used in the note editor to create a large font title input
  */
-export class EditorTitle extends React.Component {
-  handleRef = titleInputRef => {
+export class EditorTitle extends React.Component<Props> {
+  handleRef = (titleInputRef: HTMLInputElement) => {
     const { innerRef, shouldFocus } = this.props
     if (shouldFocus && titleInputRef) {
       titleInputRef.focus();

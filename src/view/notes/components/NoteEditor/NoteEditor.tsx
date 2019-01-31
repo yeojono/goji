@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from '@atlaskit/button'
-import { Editor, WithEditorActions, EditorContext } from '@atlaskit/editor-core';
+import { Editor, EditorActions, WithEditorActions, EditorContext } from '@atlaskit/editor-core';
 
 import { Note } from '../../../../model/notes';
 import debounce from '../../../../util/debounce';
@@ -8,6 +7,7 @@ import debounce from '../../../../util/debounce';
 import EditorTitle from '../EditorTitle';
 
 type Props = {
+  actions: EditorActions;
   note: Note;
   saveNote: (note: Note) => Promise<void>;
 }
@@ -22,6 +22,13 @@ export class NoteEditor extends React.Component<Props> {
    * Used to get value of title for saving
    */
   editorTitleRef = null
+
+  /**
+   * Initialised in constructor
+   */
+  saveNote = null;
+  cancelDebouncedSave = null;
+  handleEditorChange = null;
 
   constructor(props) {
     super(props);

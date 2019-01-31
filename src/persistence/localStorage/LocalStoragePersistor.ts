@@ -15,7 +15,7 @@ export default class LocalStoragePersistor implements Persistor {
     return Promise.resolve();
   }
 
-  async read(): any {
+  async read(): Promise<any> {
     return JSON.parse(
       localStorage.getItem(`${GOJI_LS_KEY}.${this.storeKey}`)
     );

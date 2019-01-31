@@ -3,17 +3,13 @@ import { Subscribe } from 'unstated';
 import { NotesStore } from '../../../../app-state';
 import { NotesRouteBase } from './NotesRouteBase';
 
-interface Props {
-
-}
-
 const selectNotes = (notes: NotesStore) => notes.state.notes;
 
-export class NotesRouteContainer extends React.Component<Props> {
+export class NotesRouteContainer extends React.Component<{}> {
   render() {
     return (
       <Subscribe to={[NotesStore]}>
-        {(notes) => (
+        {(notes: NotesStore) => (
           <NotesRouteBase notes={selectNotes(notes)} />
         )}
       </Subscribe>
