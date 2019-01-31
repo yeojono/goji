@@ -1,19 +1,11 @@
-import React from 'react';
-import styled from 'react-emotion';
-
-import { CustomComponentTypes } from '../../custom-components';
-import HomeFilledIcon from '@atlaskit/icon/glyph/home-filled';
 import EditorNoteIcon from '@atlaskit/icon/glyph/editor/note';
 import AddIcon from '@atlaskit/icon/glyph/add';
 
+import { CustomComponentTypes } from '../../custom-components';
+import { GojiWordmark } from '../../../components/GojiWordmark';
+
 const NAV_VIEW_CONTAINER_MEMES = 'NAV_VIEW_CONTAINER_MEMES';
 
-const TitleMark = styled.h1`
-  font-family: "Charlie Display";
-  margin-right: 16px;
-`;
-
-const Wordmark = () => <TitleMark>Goji</TitleMark>;
 
 export const memesView = {
   id: NAV_VIEW_CONTAINER_MEMES,
@@ -25,7 +17,7 @@ export const memesView = {
     items: [
       {
         type: 'Wordmark',
-        wordmark: Wordmark,
+        wordmark: GojiWordmark,
         id: 'goji-wordmark',
       },
     ],

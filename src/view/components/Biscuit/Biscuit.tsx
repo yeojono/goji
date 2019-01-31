@@ -1,7 +1,7 @@
 import React from 'react';
-import * as Styled from './Biscuit.styled';
+import * as Styled from './styled';
 
-interface Props {
+export interface Props {
   title: string;
   content?: React.ReactNode;
   onClick?: (e: MouseEvent) => void;

@@ -1,0 +1,1 @@
+export { GojiWordmark } from './GojiWordmark';

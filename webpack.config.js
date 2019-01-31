@@ -4,7 +4,8 @@ const path = require('path');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: ['@babel/polyfill', './src/index.js'],
+  entry: ['@babel/polyfill', './src/index'],
+  // entry: ['./src/index'],
   output: {
     path: __dirname + '/dist',
     publicPath: './',

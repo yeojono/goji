@@ -5,7 +5,11 @@ import { Item } from '@atlaskit/navigation-next';
 
 import { RouterLinkComponent } from '../RouterLinkComponent';
 
-export const NavigationMenuLink = ({ href, ...props }) => (
+export interface Props {
+  href: string;
+}
+
+export const NavigationMenuLink: React.SFC<Props> = ({ href, ...props }) => (
   <Route
     render={({ location: { pathname } }) => (
       <Item
