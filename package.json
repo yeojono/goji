@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "start:electron": "webpack --mode=development && electron ./main.js",
+    "start:electron": "webpack --mode=development && electron ./main/main.js",
     "test": "echo \"No test specified\" && exit 0"
   },
   "keywords": [],
@@ -41,6 +41,7 @@
     "@atlaskit/navigation-next": "4.0.8",
     "@atlaskit/theme": "^7.0.0",
     "emotion": "^9.2.6",
+    "nedb": "^1.8.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-emotion": "^9.2.6",
