@@ -41,6 +41,7 @@ export class AppRootBase extends React.Component<{} & NavigationProviderChildPro
           <Route exact path="/notes" component={NotesRoute}/>
           <Route path="/notes/new" component={NewNoteRoute}/>
           <Route path="/notes/:noteId" component={NoteEditorRoute}/>
+          <Route path="/" component={NotesRoute}/>
         </Switch>
       </LayoutManagerWithViewController>
     );

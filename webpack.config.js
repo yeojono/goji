@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
   entry: ['@babel/polyfill', './src/index'],
   // entry: ['./src/index'],
   output: {
@@ -40,5 +40,8 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     https: true,
+  },
+  node: {
+    fs: 'empty',
   }
 };

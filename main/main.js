@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path');
 
-require('./initDbFile');
+// const db = require('../src/persistence/db');
 
 function createWindow () {
   // Create the browser window.
