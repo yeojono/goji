@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import AppRoot from './view/AppRoot';
 import { NotesStore } from './app-state';
 import LocalStoragePersistor from './persistence/localStorage/NotesPersistor';
-import { createDb } from './persistence/nedb/createDb';
+import db from './persistence/db';
 
-const db = createDb();
+console.log(db);
+console.log('-------------------------------------hello------------------------------------');
 
 const mountApp = async function() {
   const notesStore = await new NotesStore(new LocalStoragePersistor()).init();

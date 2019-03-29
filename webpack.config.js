@@ -5,6 +5,9 @@ const path = require('path');
 module.exports = {
   devtool: 'inline-source-map',
   entry: ['@babel/polyfill', './src/index'],
+  externals: {
+    sqlite3: 'commonjs sqlite3',
+  },
   // entry: ['./src/index'],
   output: {
     path: __dirname + '/dist',

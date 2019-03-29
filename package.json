@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "electron-rebuild -f -w sqlite3",
     "start": "yarn start:electron",
     "start:electron": "webpack --mode=development && NODE_ENV=dev electron ./main/main.js",
     "test": "echo \"No test specified\" && exit 0"
@@ -19,6 +20,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.1.0",
     "@types/react-router-dom": "^4.3.1",
+    "@types/sqlite3": "^3.1.5",
     "babel-loader": "^8.0.5",
     "babel-plugin-emotion": "^9.2.6",
     "css-loader": "^1.0.0",
