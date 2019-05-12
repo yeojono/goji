@@ -2,17 +2,21 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
+// Path for the root of the renderer module
+const packageRoot = path.join(__dirname, '..');
+
 module.exports = {
+  // Tell Webpack to look for entry points and loaders from the package root
+  context: packageRoot,
   devtool: 'inline-source-map',
-  entry: ['@babel/polyfill', './src/index'],
+  entry: ['@babel/polyfill', path.join(packageRoot, 'src/index')],
   externals: {
     sqlite3: 'commonjs sqlite3',
   },
   // entry: ['./src/index'],
   output: {
-    path: __dirname + '/dist',
-    publicPath: './',
-    filename: 'bundle.js'
+    path: path.join(packageRoot, 'dist'),
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -20,7 +24,12 @@ module.exports = {
         // Load JavaScript files
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            configFile: path.join(packageRoot, 'config/.babelrc'),
+          }
+        }
       },
     ]
   },
@@ -31,11 +40,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       files: {
-        js: ['./dist/bundle.js']
+        js: ['../dist/bundle.js']
       },
-      template: path.resolve(__dirname, 'src/assets/base.tmpl.html'),
+      template: path.resolve(__dirname, '../src/assets/base.tmpl.html'),
       title: 'Goji',
-      filename: path.join(__dirname, 'dist', 'index.html'),
+      filename: path.join(packageRoot, 'dist/index.html'),
     }),
   ],
   devServer: {

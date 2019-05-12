@@ -14,7 +14,8 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  const indexFilename = path.join('file://', __dirname, '..', '/dist/index.html');
+  const indexFilename = path.join('file://', __dirname, '../renderer/dist/index.html');
+  console.log(indexFilename);
   win.loadURL(indexFilename)
 }
 

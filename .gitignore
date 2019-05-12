@@ -1,5 +1,7 @@
-node_modules/
-dist/
+**/node_modules/
+**/_cacache/
+**/_npx/
+renderer/dist
 yarn-error.log
 jonote.js
 settings.json
