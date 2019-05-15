@@ -4,7 +4,6 @@ import AppRoot from './view/AppRoot';
 import { NotesStore } from './app-state';
 import LocalStoragePersistor from './persistence/localStorage/NotesPersistor';
 import db from './persistence/db';
-
 console.log(db);
 console.log('-------------------------------------hello------------------------------------');
 
@@ -19,7 +18,3 @@ const mountApp = async function() {
     document.getElementById('app')
   );
 }();
-
-module.hot.accept('./view/AppRoot', () => {
-  mountApp();
-});

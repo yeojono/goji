@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path');
+  console.log(module.paths);
 
 // const db = require('../src/persistence/db');
 
@@ -14,9 +15,12 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  const indexFilename = path.join('file://', __dirname, '../renderer/dist/index.html');
+  let indexFilename;
+  console.log(module.paths);
   console.log(indexFilename);
-  win.loadURL(indexFilename)
+  indexFilename = path.join('file://', __dirname, '../renderer/dist/index.html');
+  win.loadURL(indexFilename);
+  win.webContents.openDevTools();
 }
 
 app.on('ready', createWindow);

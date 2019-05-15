@@ -1,20 +1,37 @@
 {
   "name": "goji-app",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main/main.js",
   "author": "Jonathan Yeo <jyeo@atlassian.com>",
   "license": "MIT",
   "private": true,
   "workspaces": [
     "renderer"
   ],
+  "build": {
+    "appId": "com.atlassian.goji",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "npmRebuild": false,
+    "extraResources": [
+      "**/node_modules/sqlite3/lib/**/*",
+      "**/node_modules/sqlite3/bin/**/*"
+    ]
+  },
   "scripts": {
     "build:renderer": "yarn workspace goji-app-renderer build",
-    "postinstall": "electron-rebuild --module-dir node_modules/sqlite3",
-    "start": "electron main/main.js"
+    "rebuild:sqlite3": "electron-rebuild --module-dir node_modules/sqlite3",
+    "package": "electron-builder",
+    "start": "electron main/main.js",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "sqlite3": "^4.0.6"
   },
   "devDependencies": {
-    "electron": "^3.0.10"
+    "electron": "^3.0.10",
+    "electron-builder": "^20.40.2"
   },
-  "homepage": "./renderer"
+  "homepage": "./"
 }
