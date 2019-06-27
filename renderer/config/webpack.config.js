@@ -10,9 +10,6 @@ module.exports = {
   context: packageRoot,
   devtool: 'inline-source-map',
   entry: ['@babel/polyfill', path.join(packageRoot, 'src/index')],
-  externals: {
-    sqlite3: 'commonjs sqlite3',
-  },
   // entry: ['./src/index'],
   output: {
     path: path.join(packageRoot, 'dist'),
