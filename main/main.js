@@ -18,7 +18,7 @@ function createWindow () {
   let indexFilename;
   console.log(module.paths);
   console.log(indexFilename);
-  indexFilename = path.join('file://', __dirname, '../renderer/dist/index.html');
+  indexFilename = path.join('file://', __dirname, '../build/index.html');
   win.loadURL(indexFilename);
   win.webContents.openDevTools();
 }

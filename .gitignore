@@ -2,7 +2,7 @@
 **/_cacache/
 **/_npx/
 **/dist
-renderer/dist
+**/build
 yarn-error.log
 jonote.js
 settings.json

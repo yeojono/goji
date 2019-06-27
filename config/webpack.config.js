@@ -12,7 +12,7 @@ module.exports = {
   entry: ['@babel/polyfill', path.join(packageRoot, 'src/index')],
   // entry: ['./src/index'],
   output: {
-    path: path.join(packageRoot, 'dist'),
+    path: path.join(packageRoot, 'build'),
     filename: '[name].bundle.js'
   },
   module: {
@@ -37,11 +37,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       files: {
-        js: ['../dist/bundle.js']
+        js: ['../build/bundle.js']
       },
       template: path.resolve(__dirname, '../src/assets/base.tmpl.html'),
       title: 'Goji',
-      filename: path.join(packageRoot, 'dist/index.html'),
+      filename: path.join(packageRoot, 'build/index.html'),
     }),
   ],
   devServer: {
