@@ -16,12 +16,13 @@
     ]
   },
   "scripts": {
-    "build": "webpack --config config/webpack.config.js",
+    "build:webpack": "webpack --config config/webpack.config.js",
+    "build:electron": "electron-builder",
+    "build": "yarn build:webpack && yarn build:electron",
     "start:legacy": "yarn build && NODE_ENV=dev electron ./main/main.js",
-    "start": "yarn start:electron",
+    "start": "yarn start:electron & yarn start:dev-server",
     "start:dev-server": "webpack-dev-server --config=config/webpack.config.js",
     "start:electron": "NODE_ENV=development electron ./main/main.js",
-    "package": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [],
