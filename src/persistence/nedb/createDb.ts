@@ -5,8 +5,6 @@ export const createDb = () => {
   // const dataFilename = '' + app.getPath('appData') + '/goji-app-13';
   const dataFilename = '/Users/jyeo/Library/Application Support/goji-app-13';
 
-  console.log(dataFilename);
-
   const datastore = new Datastore({
     filename: dataFilename,
     autoLoad: true,

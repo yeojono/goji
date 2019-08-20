@@ -31,10 +31,9 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       files: {
         js: ['../build/bundle.js']
@@ -45,10 +44,10 @@ module.exports = {
     }),
   ],
   devServer: {
-    publicPath: 'localhost:8080/',
+    publicPath: 'localhost:8060/',
     historyApiFallback: true,
-    hot: true,
-    https: true,
+    https: false,
+    port: 8060,
   },
   node: {
     fs: 'empty',

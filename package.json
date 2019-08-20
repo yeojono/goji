@@ -17,10 +17,10 @@
   },
   "scripts": {
     "build": "webpack --config config/webpack.config.js",
-
+    "start:legacy": "yarn build && NODE_ENV=dev electron ./main/main.js",
     "start": "yarn start:electron",
-    "start:electron": "yarn build && NODE_ENV=dev electron ./main/main.js",
-
+    "start:dev-server": "webpack-dev-server --config=config/webpack.config.js",
+    "start:electron": "NODE_ENV=development electron ./main/main.js",
     "package": "electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
@@ -40,7 +40,6 @@
     "electron-builder": "^20.40.2",
     "html-webpack-plugin": "^3.2.0",
     "path": "^0.12.7",
-    "react-hot-loader": "^4.3.3",
     "style-loader": "^0.22.1",
     "typescript": "^3.2.4",
     "webpack": "^4.15.1",
@@ -56,8 +55,8 @@
     "@atlaskit/navigation-next": "4.0.8",
     "@atlaskit/theme": "^7.0.0",
     "emotion": "^9.2.6",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-emotion": "^9.2.6",
     "react-intl": "^2.7.2",
     "react-router-dom": "^4.3.1",
