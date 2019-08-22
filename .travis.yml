@@ -14,15 +14,14 @@ cache:
     - $HOME/.cache/electron
     - $HOME/.cache/electron-builder
 
+before_script:
+- if [ "$TRAVIS_OS_NAME" = osx ]; then chmod +x $HOME/scripts/travis-add-osx-cert.sh; fi
+- if [ "$TRAVIS_OS_NAME" = osx ]; then $HOME/scripts/travis-add-osx-cert.sh; fi
+
 script:
   - |
       yarn build:electron
-before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
 
-before_deploy:
-- if [ "$TRAVIS_OS_NAME" = osx ]; then chmod +x $HOME/scripts/travis-add-osx-cert.sh; fi
-- if [ "$TRAVIS_OS_NAME" = osx ]; then $HOME/scripts/travis-add-osx-cert.sh; fi
 
 branches:
   except:
