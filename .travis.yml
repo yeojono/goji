@@ -15,8 +15,8 @@ cache:
     - $HOME/.cache/electron-builder
 
 before_script:
-- if [ "$TRAVIS_OS_NAME" = osx ]; then chmod +x $HOME/scripts/travis-add-osx-cert.sh; fi
-- if [ "$TRAVIS_OS_NAME" = osx ]; then $HOME/scripts/travis-add-osx-cert.sh; fi
+- if [ "$TRAVIS_OS_NAME" = osx ]; then chmod +x ./scripts/travis-add-osx-cert.sh; fi
+- if [ "$TRAVIS_OS_NAME" = osx ]; then ./scripts/travis-add-osx-cert.sh; fi
 
 script:
   - |
