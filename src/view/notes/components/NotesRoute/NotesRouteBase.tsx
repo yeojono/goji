@@ -16,6 +16,7 @@ export class NotesRouteBase extends React.Component<Props> {
     ipcRenderer.on('message', (event, args) => {
       console.log(args);
     });
+    console.log('aaghh');
   }
 
   checkForUpdates = () => {
