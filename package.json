@@ -28,8 +28,8 @@
   },
   "scripts": {
     "build:webpack": "webpack --config config/webpack.config.js",
-    "build:electron": "electron-builder",
-    "eb-publish": "electron-builder -p always",
+    "build:electron": "electron-builder --x64 --mac",
+    "eb-publish": "electron-builder --x64 --mac -p always",
     "build": "yarn build:webpack && yarn build:electron",
     "start:legacy": "yarn build && NODE_ENV=dev electron ./main/main.js",
     "start": "yarn start:electron & yarn start:dev-server",
