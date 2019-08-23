@@ -20,7 +20,7 @@ before_script:
 
 script:
   - |
-      yarn build:electron
+      yarn build
 
 
 branches:
