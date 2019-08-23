@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ipcRenderer } from 'electron';
 
 import { Biscuit } from "../../../components/Biscuit/Biscuit";
 import { Note } from "../../../../model/notes";
@@ -10,6 +11,17 @@ export interface Props {
 }
 
 export class NotesRouteBase extends React.Component<Props> {
+  constructor(props) {
+    super(props);
+    ipcRenderer.on('message', (event, args) => {
+      console.log(args);
+    });
+  }
+
+  checkForUpdates = () => {
+    ipcRenderer.send('check-for-updates');
+  }
+
   render() {
     return (
       <>
@@ -23,6 +35,7 @@ export class NotesRouteBase extends React.Component<Props> {
                 </Link>
               </div>
             ))}
+            <button onClick={this.checkForUpdates}>Check for updates</button>
           </Styled.BiscuitList>
         </Styled.PageWrapper>
       </>

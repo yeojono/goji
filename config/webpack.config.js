@@ -15,6 +15,7 @@ module.exports = {
     path: path.join(packageRoot, 'build'),
     filename: '[name].bundle.js'
   },
+  target: 'electron-renderer',
   module: {
     rules: [
       {
