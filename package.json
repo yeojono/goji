@@ -1,6 +1,6 @@
 {
   "name": "goji-app",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "main/main.js",
   "author": "Jonathan Yeo <jyeo@atlassian.com>",
   "license": "MIT",
