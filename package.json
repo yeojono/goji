@@ -50,7 +50,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-emotion": "^9.2.6",
     "css-loader": "^1.0.0",
-    "electron": "^3.0.10",
+    "electron": "^7.2.4",
     "electron-builder": "^20.40.2",
     "electron-log": "^3.0.7",
     "electron-notarize": "^0.1.1",
